@@ -181,7 +181,7 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
             var that = this;
 
             chilipeppr.load(
-              "#myDivComOzgurgesliWidgetGgButtonPanel",
+              "#com-ozgurgesli-gg-button-panel-instance",
               "http://raw.githubusercontent.com/ozgurgesli/widget-gg-button-panel/master/auto-generated-widget.html",
               function() {
                 // Callback after widget loaded into #myDivComOzgurgesliWidgetGgButtonPanel
