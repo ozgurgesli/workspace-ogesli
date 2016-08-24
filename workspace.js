@@ -63,10 +63,13 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
 
             // Most workspaces will instantiate the Serial Port JSON Server widget
             this.loadSpjsWidget();
+            
             // Most workspaces will instantiate the Serial Port Console widget
             this.loadConsoleWidget(function() {
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
             });
+            
+            this.loadGGButtonPanelWidget();
             
             this.loadTemplateWidget();
             
@@ -168,6 +171,33 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
 
                     });
                 }
+            );
+        },
+        /**
+         * Load the Custom GG Button panel widget
+         */
+        loadGGButtonPanelWidget: function(callback) {
+
+            var that = this;
+
+            // Inject new div to contain widget or use an existing div with an ID
+            $("body").append('<' + 'div id="myDivComOzgurgesliWidgetGgButtonPanel"><' + '/div>');
+            
+            chilipeppr.load(
+              "#myDivComOzgurgesliWidgetGgButtonPanel",
+              "http://raw.githubusercontent.com/ozgurgesli/widget-gg-button-panel/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivComOzgurgesliWidgetGgButtonPanel
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-ozgurgesli-widget-gg-button-panel"], // the id you gave your widget
+                  function(myObjComOzgurgesliWidgetGgButtonPanel) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / GG Button Panel just got loaded.", myObjComOzgurgesliWidgetGgButtonPanel);
+                    myObjComOzgurgesliWidgetGgButtonPanel.init();
+                  }
+                );
+              }
             );
         },
         /**
