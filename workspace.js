@@ -71,7 +71,7 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
             
             this.loadGGButtonPanelWidget();
             
-            this.loadTemplateWidget();
+//            this.loadTemplateWidget();
             
             // Create our workspace upper right corner triangle menu
             this.loadWorkspaceMenu();
