@@ -61,16 +61,17 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
          */
         init: function() {
 
-            // Most workspaces will instantiate the Serial Port JSON Server widget
-            this.loadSpjsWidget();
-            
             // Most workspaces will instantiate the Serial Port Console widget
             this.loadConsoleWidget(function() {
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
             });
+            // Most workspaces will instantiate the Serial Port JSON Server widget
+            this.loadSpjsWidget();
 
             this.loadTinyGlWidget();
             
+            
+
             this.loadGGButtonPanelWidget();
             
 //            this.loadTemplateWidget();    // commented out by ozgur
@@ -217,7 +218,6 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                   function(mywidget) {
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / TinyG loaded", mywidget);
-                    alert( "tinyg widget call back" + mywidget );
                     mywidget.init();
                   }
                 );
