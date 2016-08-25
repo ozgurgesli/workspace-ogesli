@@ -175,6 +175,7 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                 }
             );
         },
+        
         /**
          * Load the Custom GG Button panel widget
          */
@@ -207,13 +208,13 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
             var that = this;
 
             chilipeppr.load(
-              "#com-chilipeppr-interface-cnccontroller-instance",
+              "#com-chilipeppr-widget-tinyg-instance",
               "http://fiddle.jshell.net/chilipeppr/h458y7gt/show/light/",
               function() {
                 // Callback after widget loaded into #myDivComOzgurgesliWidgetGgButtonPanel
                 // Now use require.js to get reference to instantiated widget
                 cprequire(
-                  ["inline:com-chilipeppr-interface-cnccontroller"], // the id you gave your widget
+                  ["inline:com-chilipeppr-widget-tinyg"], // the id you gave your widget
                   function(mywidget) {
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / TinyG loaded", mywidget);

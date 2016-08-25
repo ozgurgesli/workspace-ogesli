@@ -267,6 +267,7 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                 }
             );
         },
+        
         /**
          * Load the Custom GG Button panel widget
          */
@@ -299,13 +300,13 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
             var that = this;
 
             chilipeppr.load(
-              "#com-chilipeppr-interface-cnccontroller-instance",
+              "#com-chilipeppr-widget-tinyg-instance",
               "http://fiddle.jshell.net/chilipeppr/h458y7gt/show/light/",
               function() {
                 // Callback after widget loaded into #myDivComOzgurgesliWidgetGgButtonPanel
                 // Now use require.js to get reference to instantiated widget
                 cprequire(
-                  ["inline:com-chilipeppr-interface-cnccontroller"], // the id you gave your widget
+                  ["inline:com-chilipeppr-widget-tinyg"], // the id you gave your widget
                   function(mywidget) {
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / TinyG loaded", mywidget);
@@ -392,7 +393,7 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                 <!-- Left Column -->
                 <!-- Change the width by adjusting col-md-4 to be col-md-3 for skinnier, or col-md-5 for wider -->
                 <!-- You must have all columns add up to 12 since we use bootstrap's col-md technique, i.e. col-md-2, col-md-7, col-md-3 adds to 12 -->
-                <div class="col-md-9 col-pad10">
+                <div class="col-md-8 col-pad10">
 
                     <div class="com-chilipeppr-ws-hdr well">
                         
@@ -440,13 +441,13 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                 </div-->
 
                 <!-- Right Column -->
-                <div class="col-md-3 col-pad10">
+                <div class="col-md-4 col-pad10">
                     
                     <div id="com-chilipeppr-widget-serialport-instance">
                         Widget 3 goes here
                     </div>
-                    
-                    <div id="com-chilipeppr-interface-cnccontroller-instance">
+        
+                    <div id="com-chilipeppr-widget-tinyg-instance">
                         <p class="sample">TinyG Widget?</p>
                     </div>
 
