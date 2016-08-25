@@ -160,6 +160,8 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
             this.loadConsoleWidget(function() {
                 setTimeout(function() { $(window).trigger('resize'); }, 100);
             });
+
+            this.loadTinyGlWidget();
             
             this.loadGGButtonPanelWidget();
             
@@ -282,13 +284,38 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                   ["inline:com-ozgurgesli-widget-gg-button-panel"], // the id you gave your widget
                   function(myObjComOzgurgesliWidgetGgButtonPanel) {
                     // Callback that is passed reference to the newly loaded widget
-                    console.log("Widget / GG Button Panel just got loaded.", myObjComOzgurgesliWidgetGgButtonPanel);
+                    console.log(".", myObjComOzgurgesliWidgetGgButtonPanel);
                     myObjComOzgurgesliWidgetGgButtonPanel.init();
                   }
                 );
               }
             );
         },
+            /**
+         * Load the cnc controller widget?
+         */
+        loadTinyGlWidget: function(callback) {
+
+            var that = this;
+
+            chilipeppr.load(
+              "#com-chilipeppr-interface-cnccontroller-instance",
+              "http://fiddle.jshell.net/chilipeppr/h458y7gt/show/light/",
+              function() {
+                // Callback after widget loaded into #myDivComOzgurgesliWidgetGgButtonPanel
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-interface-cnccontroller"], // the id you gave your widget
+                  function(mywidget) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / TinyG loaded", mywidget);
+                    mywidget.init();
+                  }
+                );
+              }
+            );
+        },
+
         /**
          * Load the Console widget via chilipeppr.load()
          */
@@ -419,8 +446,8 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                         Widget 3 goes here
                     </div>
                     
-                    <div id="mywidget3-instance">
-                        <p class="sample">Widget 3 goes here</p>
+                    <div id="com-chilipeppr-interface-cnccontroller-instance">
+                        <p class="sample">TinyG Widget?</p>
                     </div>
 
                 </div>
