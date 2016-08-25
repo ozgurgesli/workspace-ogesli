@@ -175,7 +175,6 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                 }
             );
         },
-        
         /**
          * Load the Custom GG Button panel widget
          */
@@ -218,6 +217,7 @@ cpdefine("inline:com-chilipeppr-workspace-ogesli", ["chilipeppr_ready"], functio
                   function(mywidget) {
                     // Callback that is passed reference to the newly loaded widget
                     console.log("Widget / TinyG loaded", mywidget);
+                    alert( "tinyg widget call back" + mywidget );
                     mywidget.init();
                   }
                 );
